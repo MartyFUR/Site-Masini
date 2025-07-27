@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+body{
+    margin: 0px;
+}
+#header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #222222;
+}
+
+#logo{
+    background-color: blue;
+    aspect-ratio: 1/1;
+    width: 30px;
+    border-radius: 50%;
+}
+
+nav > ul{
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    gap: 25px;
+}
+nav > ul > li > a{
+    text-decoration: none;
+    color:white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 10px;
+}
+nav > ul > li > a:hover{
+    color: #c0392b;
+    transition: 0.5s; 
+}
+nav > ul > li.active > a{
+    color:#c0392b;
+}
+#hero{
+    position: relative;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+#hero > *{
+    color:white;
+}
+#hero img{
+    height: 100%;
+    width: 100%; 
+    position: absolute; 
+    object-position: center;
+    object-fit: cover;
+    z-index:-1;
+    filter: brightness(0.4);
+}
+#hero >p , #hero > h1{
+    backdrop-filter: blur(10px);
+}
+#description{
+    width: 100%;
+    max-width: 40rem;
+    margin: 0 auto;
+}
+#description{
+    background-color: #2222220a;
+    backdrop-filter: blur(10px);
+}
+</style>
+
+<body>
+    <div id="header">
+        <img src="./rollinglow.jpeg" alt="" id="logo"> 
+
+        <nav>
+            <ul>
+                <li class="active"><a href="acasa">Acasa</a></li>
+                <li><a href="despre">Despre Noi</a></li>
+                <li><a href="2021">Editie 2021</a></li>
+                <li><a href="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="hero">
+        <img src="./background2.jpeg" alt="">
+        <h1>Low N' Slow Summer Fest</h1>
+        <p>Un festival de masini si muzica creat pentru TINE</p>
+    </div>
+
+    <div id="description">
+
+        <h2> Tunate, frumoase, puternice </h2>
+        <p>La Low N Slow Summer Fest, fiecare mașină este o operă de artă în mișcare. Tunerii și pasionații vin din toate colțurile țării pentru a-și etala munca, stilul și creativitatea. Caroserii impecabil lustruite, culori excentrice și detalii care fură privirea la fiecare pas. De la jante rare până la LED-uri custom și interioare din piele sau Alcantara, totul e personalizat. Este mai mult decât un simplu expo, e o paradă a identității auto. Puterea nu e doar sub capotă, ci și în felul în care fiecare mașină transmite emoție. Unele sunt joase până la milimetru de asfalt, altele sună ca niște fiare dezlănțuite. Cei care vin aici știu ce înseamnă mii de ore de muncă și pasiune într-un singur vehicul. Festivalul oferă ocazia perfectă să descoperi cele mai spectaculoase proiecte auto din România. Aici, frumusețea și forța merg întotdeauna mână în mână.</p>
+
+        <h2>Zgomote, fum, muzici, aproape din toate masinile</h2>
+        <p>Atmosfera de la Low N Slow e greu de descris în cuvinte trebuie să o trăiești. Fumul de la burnouts se ridică în aer în timp ce motoarele răcnesc ca niște bestii înfrânate. Din fiecare colț al festivalului răsună muzică: trap, hip-hop, techno sau bass old-school, fiecare mașină cu propriul vibe. DJ-ii întrețin vibe-ul pe scenă, dar și în spatele portbagajelor deschise, transformate în sisteme de sunet mobile. Mirosul de cauciuc încins, sunetul de supape și bass-ul care vibrează în piept creează o experiență senzorială totală. Publicul dansează, filmează și simte energia transmisă de sute de cai putere și decibeli. Aici nu există pauze  fiecare moment e plin de viață, zgomot și adrenalină. Este un festival unde pasionații de mașini și muzică devin o singură comunitate. Chiar și cei care vin pentru prima dată se lasă rapid cuprinși de atmosferă. Pentru câteva zile, totul în jur devine spectacol</p>
+
+    </div>
+</body>
+
+<script>
+    const full_text ="Low N' Slow Summer Fest";
+    const text_length = full_text.length;
+
+    var h1_element = document.querySelector("h1");
+
+    var start_slice = 1;
+
+    function seteaza_text(){
+        h1_element.innerHTML = full_text.slice(0, start_slice);
+        start_slice++;
+        if (start_slice == text_length + 1){
+            start_slice = 1;
+        }
+    }
+
+    setInterval(seteaza_text, 400);
+
+
+   
+</script>
+
+</html>
